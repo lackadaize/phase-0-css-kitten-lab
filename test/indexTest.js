@@ -21,28 +21,28 @@ describe("place-kitty.css", () => {
   });
 
   it("selects the image with a class of kitty-1", () => {
-    const rule = findRule(css.cssRules, ".kitty-1");
+    const rule = findRule(css.cssRules, "img.kitty-1");
     const hint =
       "Make sure you have a CSS selector that selects the image that has a class of kitty-1";
     expect(rule, hint).to.exist;
   });
 
   it("selects the image with an id of kitty-2", () => {
-    const rule = findRule(css.cssRules, "#kitty-2");
+    const rule = findRule(css.cssRules, "img#kitty-2");
     const hint =
       "Make sure you have a CSS selector that selects the image that has an id of kitty-2";
     expect(rule, hint).to.exist;
   });
 
   it("selects the image inside the element with an id of basket (via descendent relationship)", () => {
-    const rule = findRule(css.cssRules, "#basket img");
+    const rule = findRule(css.cssRules, "div#basket img");
     const hint =
       "Make sure you have a CSS selector that selects the image inside the element with an id of basket (via descendent relationship)";
     expect(rule, hint).to.exist;
   });
 
   it("selects the image based on the respective sibling element", () => {
-    const rule = findRule(css.cssRules, "#ball + img");
+    const rule = findRule(css.cssRules, "div#ball ~ img");
     const hint =
       "Make sure you have a CSS selector that selects the image based on the respective sibling element";
     expect(rule, hint).to.exist;
